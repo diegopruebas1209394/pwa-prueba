@@ -16,15 +16,15 @@ self.addEventListener('install', evento=>{
           .then(cache=>{
                   return cache.addAll([
                   '/',
-                  '/Parcial_1/ejemplo_cache/index.html',
-                  '/Parcial_1/ejemplo_cache/form.html',
-                  '/Parcial_1/ejemplo_cache/offline.html',
-                  '/Parcial_1/ejemplo_cache/css/styles.css',
-                  '/Parcial_1/ejemplo_cache/css/icons.css',
-                  '/Parcial_1/ejemplo_cache/js/app.js',
-                  '/Parcial_1/ejemplo_cache/images/1.jpg',
-                  '/Parcial_1/ejemplo_cache/images/2.jpg',
-                  '/Parcial_1/ejemplo_cache/images/no-img.jpg',
+                  'index.html',
+                  'form.html',
+                  'offline.html',
+                  'css/styles.css',
+                  'css/icons.css',
+                  'js/app.js',
+                  'images/1.jpg',
+                  'images/2.jpg',
+                  'images/no-img.jpg',
                 ]);
           });
 
@@ -70,7 +70,7 @@ self.addEventListener('fetch', evento => {
         //si ocurre un error, en nuestro caso no hay conexión
         if(evento.request.headers.get('accept').includes('text/html')){
         //si lo que se pide es un archivo html muestra nuestra página offline que esta en cache
-             return caches.match('/Parcial_1/ejemplo_cache/offline.html');
+             return caches.match('/ejemplo_cache/offline.html');
         }
     });
         evento.respondWith(respuesta);
@@ -86,7 +86,7 @@ self.addEventListener('fetch', evento =>{
             const falloUnaVez = () => {
                 if ( rechazada ) {
                     if ( /\.(png|jpg)$/i.test( evento.request.url ) ) {
-                          resolve( caches.match('/Parcial_1/ejemplo_cache/images/no-img.jpg') );
+                          resolve( caches.match('/ejemplo_cache/images/no-img.jpg') );
                     } else {
                           reject('No se encontro respuesta');
                     }

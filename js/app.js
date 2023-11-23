@@ -6,9 +6,10 @@
 
 if (navigator.serviceWorker){
     //Registramos el sw indicando la ubicación del archivo
-    navigator.serviceWorker.register("/Parcial_1/ejemplo_cache/sw.js");
+    navigator.serviceWorker.register("/sw.js");
 }
    
+
 
 // if ( navigator.serviceWorker ) {
 // /*Para que nuestro proyecto siga funcionando en localhost 
