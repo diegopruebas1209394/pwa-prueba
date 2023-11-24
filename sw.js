@@ -16,16 +16,14 @@ self.addEventListener('install', evento=>{
           .then(cache=>{
                   return cache.addAll([
                  // '/',
-                  '/pwa-prueba/index.html',
-                  '/pwa-prueba/form.html',
-                  '/pwa-prueba/offline.html',
-                  '/pwa-prueba/css/styles.css',
-                  '/pwa-prueba/css/icons.css',
-                  '/pwa-prueba/js/bootstrap.min.js',
-                  '/pwa-prueba/js/application.js',
-                  '/pwa-prueba/images/1.jpg',
-                  '/pwa-prueba/images/2.jpg',
-                  '/pwa-prueba/images/no-img.jpg',
+                    'index.html',
+                    'css/londinium-theme.css',
+                    'css/styles.css',
+                    'css/icons.css',
+                    'js/bootstrap.min.js',
+                    'js/application.js',
+                    'form.html'
+
                 ]);
           });
 
