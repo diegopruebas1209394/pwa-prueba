@@ -17,7 +17,7 @@ como en el servidor realizaremos una validación si la url
 contiene localhost la ruta es la local del proyecto, de lo contrario
 es la ruta de nuestro repositorio*/
     if(url.includes('localhost')){
-        ubicacionSw='/pwa-prueba/sw.js';
+        ubicacionSw='/sw.js';
     }
     navigator.serviceWorker.register(ubicacionSw);
 }

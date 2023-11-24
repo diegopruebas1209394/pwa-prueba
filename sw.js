@@ -16,13 +16,13 @@ self.addEventListener('install', evento=>{
           .then(cache=>{
                   return cache.addAll([
                  // '/',
-                  'index.html',
+                  '/pwa-prueba/index.html',
                   '/pwa-prueba/form.html',
                   '/pwa-prueba/offline.html',
-                  '/pwa-prueba/css/styles.css',
-                  '/pwa-prueba/css/icons.css',
-                  '/pwa-prueba/js/bootstrap.min.js',
-                  '/js/application.js',
+                  'css/styles.css',
+                  'css/icons.css',
+                  'js/bootstrap.min.js',
+                  'js/application.js',
                   '/pwa-prueba/images/1.jpg',
                   '/pwa-prueba/images/2.jpg',
                   '/pwa-prueba/images/no-img.jpg',
@@ -87,7 +87,7 @@ self.addEventListener('fetch', evento =>{
             const falloUnaVez = () => {
                 if ( rechazada ) {
                     if ( /\.(png|jpg)$/i.test( evento.request.url ) ) {
-                          resolve( caches.match('/pwa-prueba/images/no-img.jpg') );
+                          resolve( caches.match('images/no-img.jpg') );
                     } else {
                           reject('No se encontro respuesta');
                     }
