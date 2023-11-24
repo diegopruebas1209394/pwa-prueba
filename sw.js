@@ -15,13 +15,14 @@ self.addEventListener('install', evento=>{
       const promesa =caches.open(CACHE)
           .then(cache=>{
                   return cache.addAll([
-                  '/',
+                 // '/',
                   'index.html',
                   'form.html',
                   'offline.html',
                   'css/styles.css',
                   'css/icons.css',
-                  'js/app.js',
+                  'js/bootstrap.min.js',
+                  'js/application.js',
                   'images/1.jpg',
                   'images/2.jpg',
                   'images/no-img.jpg',
