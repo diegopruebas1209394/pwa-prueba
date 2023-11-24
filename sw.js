@@ -16,14 +16,16 @@ self.addEventListener('install', evento=>{
           .then(cache=>{
                   return cache.addAll([
                  // '/',
-                    'index.html',
-                    'css/londinium-theme.css',
-                    'css/styles.css',
-                    'css/icons.css',
-                    'js/bootstrap.min.js',
-                    'js/application.js',
-                    'form.html'
-
+                  'index.html',
+                  '/pwa-prueba/form.html',
+                  '/pwa-prueba/offline.html',
+                  '/pwa-prueba/css/styles.css',
+                  '/pwa-prueba/css/icons.css',
+                  '/pwa-prueba/js/bootstrap.min.js',
+                  '/js/application.js',
+                  '/pwa-prueba/images/1.jpg',
+                  '/pwa-prueba/images/2.jpg',
+                  '/pwa-prueba/images/no-img.jpg',
                 ]);
           });
 
@@ -69,7 +71,7 @@ self.addEventListener('fetch', evento => {
         //si ocurre un error, en nuestro caso no hay conexión
         if(evento.request.headers.get('accept').includes('text/html')){
         //si lo que se pide es un archivo html muestra nuestra página offline que esta en cache
-             return caches.match('/pwa-prueba/ejemplo_cache/offline.html');
+             return caches.match('/pwa-prueba/offline.html');
         }
     });
         evento.respondWith(respuesta);
