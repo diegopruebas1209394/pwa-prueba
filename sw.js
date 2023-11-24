@@ -16,16 +16,16 @@ self.addEventListener('install', evento=>{
           .then(cache=>{
                   return cache.addAll([
                  // '/',
-                  'index.html',
-                  'form.html',
-                  'offline.html',
-                  'css/styles.css',
-                  'css/icons.css',
-                  'js/bootstrap.min.js',
-                  'js/application.js',
-                  'images/1.jpg',
-                  'images/2.jpg',
-                  'images/no-img.jpg',
+                  '/pwa-prueba/index.html',
+                  '/pwa-prueba/form.html',
+                  '/pwa-prueba/offline.html',
+                  '/pwa-prueba/css/styles.css',
+                  '/pwa-prueba/css/icons.css',
+                  '/pwa-prueba/js/bootstrap.min.js',
+                  '/pwa-prueba/js/application.js',
+                  '/pwa-prueba/images/1.jpg',
+                  '/pwa-prueba/images/2.jpg',
+                  '/pwa-prueba/images/no-img.jpg',
                 ]);
           });
 
@@ -71,7 +71,7 @@ self.addEventListener('fetch', evento => {
         //si ocurre un error, en nuestro caso no hay conexión
         if(evento.request.headers.get('accept').includes('text/html')){
         //si lo que se pide es un archivo html muestra nuestra página offline que esta en cache
-             return caches.match('/ejemplo_cache/offline.html');
+             return caches.match('/pwa-prueba/ejemplo_cache/offline.html');
         }
     });
         evento.respondWith(respuesta);
@@ -87,7 +87,7 @@ self.addEventListener('fetch', evento =>{
             const falloUnaVez = () => {
                 if ( rechazada ) {
                     if ( /\.(png|jpg)$/i.test( evento.request.url ) ) {
-                          resolve( caches.match('/ejemplo_cache/images/no-img.jpg') );
+                          resolve( caches.match('/pwa-prueba/images/no-img.jpg') );
                     } else {
                           reject('No se encontro respuesta');
                     }
